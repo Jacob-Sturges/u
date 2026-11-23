@@ -1,0 +1,37 @@
+// Jacob Sturges
+// Checkpoint 03 Unit Tests for Move, Game, Coach, FileManager, and Menu
+
+#include <cassert>
+#include <iostream>
+#include "Move.h"
+#include "Game.h"
+#include "Coach.h"
+#include "FileManager.h"
+#include "Menu.h"
+
+int main() {
+    Move m1(1, "e4");
+    assert(m1.getMoveNumber() == 1);
+    assert(m1.getNotation() == "e4");
+    m1.displayMove();
+
+    Game g("Jacob", "Alex", "1-0");
+    g.addMove(m1);
+    g.addMove(Move(2, "Qh5"));
+    assert(g.getMoves().size() == 2);
+    g.displayMoves();
+
+    Coach coach;
+    coach.reviewGame(g);
+    assert(coach.detectEarlyQueen(g.getMoves()));
+    coach.displayFeedback();
+
+    Menu menu;
+    menu.setChoice(1);
+    assert(menu.getChoice() == 1);
+    assert(menu.processSelection(1) == true);
+    assert(menu.processSelection(7) == false);
+
+    std::cout << "All Checkpoint 03 unit tests passed!\n";
+    return 0;
+}

@@ -20,3 +20,12 @@ Designing clean class interfaces and deciding which helper methods belonged insi
 
 2. What design decisions or changes did you make?
 I added include guards and header summary comments to every `.h` file, kept data members private (`moveNumber`, `notation`, `whitePlayer`, `blackPlayer`, `result`, `moves`, `feedback`, `fileName`, `choice`), and declared constructors, getters, setters, and core methods aligned with the Phase II UML diagrams.
+---
+
+## checkpoint-03: class definition
+
+1. What challenges did you encounter?
+Writing out member function definitions with proper scope resolution and keeping each method focused on a single task required careful attention to parameter types, return values, and edge cases like empty move lists, as well as cleaning up accidental code-block backticks during build testing.
+
+2. What design decisions or changes did you make?
+I implemented all class member functions in their corresponding `.cpp` files with `Name`, `Params`, `Return`, and `Description` documentation blocks, verified them through unit tests in `main.cpp`, and renamed `main.cpp` to `maintest.txt` so it stays in the repository without being compiled alongside the main program later.
